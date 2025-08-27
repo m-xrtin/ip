@@ -1,10 +1,6 @@
 public class Tarnia {
     public static void main(String[] args) {
-        String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
+        String logo = "𝓣𝓪𝓻𝓷𝓲𝓪 💔";
         System.out.println("Hello from\n" + logo);
         System.out.println("Hello! I'm Tarnia\n");
         System.out.println("What can I do for you?\n");
