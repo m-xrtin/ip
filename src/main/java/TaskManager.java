@@ -12,11 +12,10 @@ public class TaskManager {
         return counter;
     }
 
-    public void addTask(String description) {
-        Task task = new Task(description);
+    public void addTask(Task task) {
         tasks[counter] = task;
         counter++;
-        Messages.printAddTaskMessage(task);
+        Messages.printAddTaskMessage(task, counter);
     }
     
     public void markTask(int index) {

@@ -22,8 +22,14 @@ public class CommandManager {
         case "bye":
             Messages.printGoodbyeMessage();
             return false;
-        default:
-            manager.addTask(line);
+        case "deadline":
+            manager.addTask(Parser.parseDeadline(parts[1]));
+            break;
+        case "event": 
+            manager.addTask(Parser.parseEvents(parts[1]));
+            break;
+        case "todo":
+            manager.addTask(Parser.parseToDo(parts[1]));
             break;
         }
         return true;
