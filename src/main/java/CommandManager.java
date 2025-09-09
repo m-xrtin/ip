@@ -14,22 +14,23 @@ public class CommandManager {
             Messages.printTaskList(manager.getTasks(), manager.getCount());
             break;
         case "mark":
-            manager.markTask(Integer.parseInt(parts[1]) - 1);
-            break;
         case "unmark":
-            manager.unmarkTask(Integer.parseInt(parts[1]) - 1);
+            ErrorCatcher.catchMarkCommand(parts, manager, command);
             break;
         case "bye":
             Messages.printGoodbyeMessage();
             return false;
         case "deadline":
-            manager.addTask(Parser.parseDeadline(parts[1]));
+            ErrorCatcher.catchDeadlineCommand(parts, manager);
             break;
         case "event": 
-            manager.addTask(Parser.parseEvents(parts[1]));
+            ErrorCatcher.catchEventCommand(parts, manager);
             break;
         case "todo":
-            manager.addTask(Parser.parseToDo(parts[1]));
+            ErrorCatcher.catchTodoCommand(parts, manager);
+            break;
+        default:
+            Messages.printUnkownCommand();
             break;
         }
         return true;

@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Tarnia {
 
-
     public static void main(String[] args) {
 
         Messages.printHelloMessage();
