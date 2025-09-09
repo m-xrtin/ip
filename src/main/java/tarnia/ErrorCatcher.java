@@ -1,3 +1,5 @@
+package tarnia;
+
 public class ErrorCatcher {
     
     public static void catchMarkCommand(String[] parts, TaskManager manager, String command) {

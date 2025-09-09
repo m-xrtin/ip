@@ -1,3 +1,5 @@
+package tarnia;
+
 public class CommandManager {
     private TaskManager manager;
 
