@@ -1,3 +1,5 @@
+package tarnia;
+
 public class Messages {
 
     public static void printHelloMessage() {

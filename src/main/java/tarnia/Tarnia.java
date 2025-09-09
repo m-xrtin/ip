@@ -1,3 +1,4 @@
+package tarnia;
 import java.util.Scanner;
 
 public class Tarnia {

@@ -1,3 +1,5 @@
+package tarnia;
+
 public class Parser {
     public static Task parseToDo(String input) {
         return new Task(input.trim());
