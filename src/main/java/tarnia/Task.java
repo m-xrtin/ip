@@ -35,4 +35,8 @@ public class Task {
     public String toString() {
         return "[" + taskType + "][" + getStatusIcon() + "] " + description;
     }
+
+    public String toSaveFormat() {
+        return "T | " + (isDone ? 1 : 0) + " | " + description;
+    }
 }

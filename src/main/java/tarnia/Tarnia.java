@@ -7,7 +7,8 @@ public class Tarnia {
 
         Messages.printHelloMessage();
         Scanner in = new Scanner(System.in);
-        TaskManager manager = new TaskManager();
+        Storage storage = new Storage("./data/tarnia.txt");
+        TaskManager manager = new TaskManager(storage);
         CommandManager commandManager = new CommandManager(manager);
         while (true) {
             String line = in.nextLine().trim();
