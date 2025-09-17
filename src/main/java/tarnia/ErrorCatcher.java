@@ -52,4 +52,17 @@ public class ErrorCatcher {
             }
         }
     }
+
+    public static void catchDeleteCommand(String[] parts, TaskManager manager) {
+        try {
+            int index = Integer.parseInt(parts[1]) - 1;
+            manager.deleteTask(index);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            Messages.printEmptyMessage("delete");
+        } catch (NumberFormatException e) {
+            Messages.printNotANumber("delete");
+        } catch (IndexOutOfBoundsException e) {
+            Messages.printOutOfRange("delete");
+        }
+    }
 }

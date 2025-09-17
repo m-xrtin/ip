@@ -1,32 +1,39 @@
 package tarnia;
 
+import java.util.ArrayList;
+
 public class TaskManager {
 
-    private static final int MAX_TASKS = 100;
-    private Task[] tasks = new Task[MAX_TASKS];
-    private int counter = 0;
+    private ArrayList<Task> tasks = new ArrayList<>();
 
-    public Task[] getTasks() {
+    public ArrayList<Task> getTasks() {
         return tasks;
     }
 
     public int getCount() {
-        return counter;
+        return tasks.size();
     }
 
     public void addTask(Task task) {
-        tasks[counter] = task;
-        counter++;
-        Messages.printAddTaskMessage(task, counter);
+        tasks.add(task);
+        Messages.printAddTaskMessage(task);
+        Messages.printListCountMessage(tasks.size());
     }
     
     public void markTask(int index) {
-        tasks[index].markDone();
-        Messages.printMarkTaskMessage(tasks[index]);
+        tasks.get(index).markDone();
+        Messages.printMarkTaskMessage(tasks.get(index));
     }
 
     public void unmarkTask(int index) {
-        tasks[index].markUndone();
-        Messages.printUnmarkTaskMessage(tasks[index]);
+        tasks.get(index).markUndone();
+        Messages.printUnmarkTaskMessage(tasks.get(index));
+    }
+
+    public void deleteTask(int index) {
+        Messages.printDeleteMessage(tasks, index);
+        tasks.remove(index);
+        Messages.printListCountMessage(tasks.size());
+
     }
 }

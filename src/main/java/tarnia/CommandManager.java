@@ -13,7 +13,7 @@ public class CommandManager {
 
         switch (command) {
         case "list":
-            Messages.printTaskList(manager.getTasks(), manager.getCount());
+            Messages.printTaskList(manager.getTasks());
             break;
         case "mark":
         case "unmark":
@@ -31,8 +31,11 @@ public class CommandManager {
         case "todo":
             ErrorCatcher.catchTodoCommand(parts, manager);
             break;
+        case "delete":
+            ErrorCatcher.catchDeleteCommand(parts, manager);
+            break;
         default:
-            Messages.printUnkownCommand();
+            Messages.printUnknownCommand();
             break;
         }
         return true;

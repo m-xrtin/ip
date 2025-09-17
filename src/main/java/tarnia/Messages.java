@@ -1,21 +1,22 @@
 package tarnia;
 
+import java.util.ArrayList;
+
 public class Messages {
 
     public static void printHelloMessage() {
-        System.out.println("Hello! I'm 𝓣𝓪𝓻𝓷𝓲𝓪 💔");
+        System.out.println("Hello! I'm TARNIA 💔");
         System.out.println("What can I do for you?");
     }
 
-    public static void printAddTaskMessage(Task task, int count) {
+    public static void printAddTaskMessage(Task task) {
         System.out.println("added for ya: " + task);
-        System.out.println("Now you have " + count + " task(s) in da list :o");
     }
 
-    public static void printTaskList(Task[] tasks, int count) {
+    public static void printTaskList(ArrayList<Task> tasks) {
         System.out.println("Here are the tasks in your list! :");
-        for (int i = 0; i < count; i++) {
-            System.out.println((i + 1) + ". " + tasks[i]);
+        for (int i = 0; i < tasks.size(); i++) {
+            System.out.println((i + 1) + ". " + tasks.get(i));
         }
     }
 
@@ -52,8 +53,17 @@ public class Messages {
         System.out.println("OOPS!!! The event format is wrong. Use: event <task> /from <start time> /to <end time>");
     }
 
-    public static void printUnkownCommand() {
+    public static void printUnknownCommand() {
         System.out.println("Sorry Mate, Don't know what you're on about.");
+    }
+
+    public static void printDeleteMessage(ArrayList<Task> tasks, int index) {
+        System.out.println("Okay noteddd, I will delete this task:");
+        System.out.println(tasks.get(index));
+    }
+
+    public static void printListCountMessage(int count) {
+        System.out.println("Now you have " + count + " task(s) in da list :o");
     }
 
 }
