@@ -38,6 +38,7 @@ public class CommandManager {
             Messages.printUnknownCommand();
             break;
         }
+        
         return true;
     }
 }
