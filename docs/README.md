@@ -9,7 +9,7 @@ Tarnia is a simple command-line task manager that helps you keep track of tasks 
    You can check with:  
    `java -version`  
 2. Download our program through here:
-   https://github.com/m-xrtin/ip/releases/tag/v1.0
+   [https://github.com/m-xrtin/ip/releases/tag/v1.0](https://github.com/m-xrtin/ip/releases/tag/A-Release)
 3. In the directory containing our jar, run:  
    `java -jar tarnia.jar`  
 
