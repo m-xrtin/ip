@@ -21,5 +21,7 @@ Tarnia is a simple command-line task manager application. It helps users keep tr
 
 ### Setup
 1. Clone this repository:
-   ```bash
+   '''
    git clone https://github.com/yourusername/tarnia.git
+   '''
+2. 
