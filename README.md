@@ -34,24 +34,24 @@ Tarnia is a simple command-line task manager that helps you keep track of tasks 
 Example: `todo read book`  
 
 **Add a Deadline**  
-`deadline <description> /by <yyyy-mm-dd>`  
-Example: `deadline return book /by 2025-10-15`  
+`deadline <description> /by <due date>`  
+Example: `deadline return book /by friday`  
 
 **Add an Event**  
-`event <description> /at <yyyy-mm-dd HH:mm>`  
-Example: `event project meeting /at 2025-10-01 14:00`  
+`event <description> /from <start time> /to <end time>`  
+Example: `event project meeting /from 2pm /to 4pm`  
 
 **List Tasks**  
 `list`  
 
 **Mark a Task**  
-`mark <task number>`  
+`mark <task index>`  
 
 **Unmark a Task**  
-`unmark <task number>`  
+`unmark <task index>`  
 
 **Delete a Task**  
-`delete <task number>`  
+`delete <task index>`  
 
 **Find by Keyword**  
 `find <keyword>`  
