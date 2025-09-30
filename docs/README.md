@@ -1,30 +1,65 @@
-# Tarnia User Guide
+# Tarnia User Guide 😊
 
-// Update the title above to match the actual product name
+Tarnia is a simple command-line task manager that helps you keep track of tasks such as **todos**, **deadlines**, and **events**.
 
-// Product screenshot goes here
+---
 
-// Product intro goes here
+## Running the Program 😈
+1. Ensure you have **Java 17** installed.  
+   You can check with:  
+   `java -version`  
 
-## Adding deadlines
+2. Run the JAR file:  
+   `java -jar tarnia.jar`  
 
-// Describe the action and its outcome.
+---
 
-// Give examples of usage
+## Features 😎
 
-Example: `keyword (optional arguments)`
+- **Todo** – add a basic task with just a description.  
+- **Deadline** – add a task with a description and a due date.  
+- **Event** – add a task with a description and date/time.  
+- **List** all tasks with their completion status.  
+- **Mark** and **unmark** tasks as done.  
+- **Delete** tasks.  
+- **Find** tasks by keyword.  
+- Tasks are **saved automatically** between sessions.
 
-// A description of the expected outcome goes here
+---
 
-```
-expected output
-```
+## Commands 🤪
 
-## Feature ABC
+**Add a Todo**  
+`todo <description>`  
+Example: `todo read book`  
 
-// Feature details
+**Add a Deadline**  
+`deadline <description> /by <due date>`  
+Example: `deadline return book /by friday`  
 
+**Add an Event**  
+`event <description> /from <start time> /to <end time>`  
+Example: `event project meeting /from 2pm /to 4pm`  
 
-## Feature XYZ
+**List Tasks**  
+`list`  
 
-// Feature details
+**Mark a Task**  
+`mark <task index>`  
+
+**Unmark a Task**  
+`unmark <task index>`  
+
+**Delete a Task**  
+`delete <task index>`  
+
+**Find by Keyword**  
+`find <keyword>`  
+
+**Exit**  
+`bye`  
+
+## Notes 🥳
+- Commands are case-insensitive.
+- Tasks are saved to a local file and reloaded when you run the program again.
+- Date/time is saved as strings, so a bit more flexibility in terms of format.
