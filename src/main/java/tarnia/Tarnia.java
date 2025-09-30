@@ -3,22 +3,35 @@ import java.util.Scanner;
 
 public class Tarnia {
 
-    public static void main(String[] args) {
+    private Ui ui;
+    private Storage storage;
+    private TaskList tasks;
+    private CommandManager commands;
 
-        Messages.printHelloMessage();
+    public Tarnia(String filePath) {
+        ui = new Ui();
+        storage = new Storage(filePath);
+        tasks = new TaskList(storage, ui);
+        commands = new CommandManager(tasks, ui);
+    }
+
+    public void run() {
+        ui.printHelloMessage();
         Scanner in = new Scanner(System.in);
-        Storage storage = new Storage("./data/tarnia.txt");
-        TaskManager manager = new TaskManager(storage);
-        CommandManager commandManager = new CommandManager(manager);
         while (true) {
             String line = in.nextLine().trim();
-            if (!commandManager.handleCommand(line)) {
+            if (!commands.handleCommand(line)) {
                 break;
             }
         }
         in.close();
     }
+
+    public static void main(String[] args) {
+        new Tarnia("./data/tarnia.txt").run();
+    }
 }
+
     
 
 

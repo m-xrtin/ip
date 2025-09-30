@@ -1,10 +1,12 @@
 package tarnia;
 
 public class CommandManager {
-    private TaskManager manager;
+    private TaskList manager;
+    private Ui ui;
 
-    public CommandManager (TaskManager manager) {
+    public CommandManager(TaskList manager, Ui ui) {
         this.manager = manager;
+        this.ui = ui;
     }
 
     public boolean handleCommand(String line) {
@@ -13,32 +15,32 @@ public class CommandManager {
 
         switch (command) {
         case "list":
-            Messages.printTaskList(manager.getTasks());
+            ui.printTaskList(manager.getTasks());
             break;
         case "mark":
         case "unmark":
-            ErrorCatcher.catchMarkCommand(parts, manager, command);
+            ErrorCatcher.catchMarkCommand(parts, manager, command, ui);
             break;
         case "bye":
-            Messages.printGoodbyeMessage();
+            ui.printGoodbyeMessage();
             return false;
         case "deadline":
-            ErrorCatcher.catchDeadlineCommand(parts, manager);
+            ErrorCatcher.catchDeadlineCommand(parts, manager, ui);
             break;
-        case "event": 
-            ErrorCatcher.catchEventCommand(parts, manager);
+        case "event":
+            ErrorCatcher.catchEventCommand(parts, manager, ui);
             break;
         case "todo":
-            ErrorCatcher.catchTodoCommand(parts, manager);
+            ErrorCatcher.catchTodoCommand(parts, manager, ui);
             break;
         case "delete":
-            ErrorCatcher.catchDeleteCommand(parts, manager);
+            ErrorCatcher.catchDeleteCommand(parts, manager, ui);
             break;
         default:
-            Messages.printUnknownCommand();
+            ui.printUnknownCommand();
             break;
         }
-        
         return true;
     }
 }
+

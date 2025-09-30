@@ -2,13 +2,15 @@ package tarnia;
 
 import java.util.ArrayList;
 
-public class TaskManager {
+public class TaskList {
 
     private ArrayList<Task> tasks = new ArrayList<>();
-    private Storage storage;
+    private final Storage storage;
+    private final Ui ui;
 
-    public TaskManager(Storage storage) {
+    public TaskList(Storage storage, Ui ui) {
         this.storage = storage;
+        this.ui = ui;
         try {
             this.tasks = storage.load();
         } catch (Exception e) {
@@ -26,29 +28,28 @@ public class TaskManager {
 
     public void addTask(Task task) {
         tasks.add(task);
-        Messages.printAddTaskMessage(task);
-        Messages.printListCountMessage(tasks.size());
+        ui.printAddTaskMessage(task);
+        ui.printListCountMessage(tasks.size());
         saveTasks();
     }
-    
+
     public void markTask(int index) {
         tasks.get(index).markDone();
-        Messages.printMarkTaskMessage(tasks.get(index));
+        ui.printMarkTaskMessage(tasks.get(index));
         saveTasks();
     }
 
     public void unmarkTask(int index) {
         tasks.get(index).markUndone();
-        Messages.printUnmarkTaskMessage(tasks.get(index));
+        ui.printUnmarkTaskMessage(tasks.get(index));
         saveTasks();
     }
 
     public void deleteTask(int index) {
-        Messages.printDeleteMessage(tasks, index);
+        ui.printDeleteMessage(tasks, index);
         tasks.remove(index);
-        Messages.printListCountMessage(tasks.size());
+        ui.printListCountMessage(tasks.size());
         saveTasks();
-
     }
 
     private void saveTasks() {
@@ -58,5 +59,4 @@ public class TaskManager {
             System.out.println("Error saving tasks: " + e.getMessage());
         }
     }
-
 }

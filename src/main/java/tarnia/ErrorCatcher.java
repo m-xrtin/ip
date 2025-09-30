@@ -1,68 +1,66 @@
 package tarnia;
 
 public class ErrorCatcher {
-    
-    public static void catchMarkCommand(String[] parts, TaskManager manager, String command) {
+
+    public static void catchMarkCommand(String[] parts, TaskList manager, String command, Ui ui) {
         try {
             int index = Integer.parseInt(parts[1]) - 1;
-
-            if (command.equals("mark")) {
+            if ("mark".equals(command)) {
                 manager.markTask(index);
-            } else if (command.equals("unmark")) {
+            } else {
                 manager.unmarkTask(index);
             }
-            
         } catch (ArrayIndexOutOfBoundsException e) {
-            Messages.printEmptyMessage(command);
+            ui.printEmptyMessage(command);
         } catch (NumberFormatException e) {
-            Messages.printNotANumber(command);
+            ui.printNotANumber(command);
         } catch (IndexOutOfBoundsException e) {
-            Messages.printOutOfRange(command);
+            ui.printOutOfRange(command);
         }
     }
 
-    public static void catchTodoCommand(String[] parts, TaskManager manager) {
+    public static void catchTodoCommand(String[] parts, TaskList manager, Ui ui) {
         try {
             manager.addTask(Parser.parseToDo(parts[1]));
         } catch (ArrayIndexOutOfBoundsException e) {
-            Messages.printEmptyMessage("todo");
+            ui.printEmptyMessage("todo");
         }
     }
 
-    public static void catchDeadlineCommand(String[] parts, TaskManager manager) {
+    public static void catchDeadlineCommand(String[] parts, TaskList manager, Ui ui) {
         try {
             manager.addTask(Parser.parseDeadline(parts[1]));
         } catch (ArrayIndexOutOfBoundsException e) {
-            Messages.printEmptyMessage("deadline");
+            ui.printEmptyMessage("deadline");
         } catch (IllegalArgumentException e) {
-            if (e.getMessage().equals("badformat")) {
-                Messages.printBadDeadlineFormat();
+            if ("badformat".equals(e.getMessage())) {
+                ui.printBadDeadlineFormat();
             }
         }
     }
 
-    public static void catchEventCommand(String[] parts, TaskManager manager) {
+    public static void catchEventCommand(String[] parts, TaskList manager, Ui ui) {
         try {
             manager.addTask(Parser.parseEvents(parts[1]));
         } catch (ArrayIndexOutOfBoundsException e) {
-            Messages.printEmptyMessage("event");
+            ui.printEmptyMessage("event");
         } catch (IllegalArgumentException e) {
-            if (e.getMessage().equals("badformat")) {
-                Messages.printBadEventFormat();
+            if ("badformat".equals(e.getMessage())) {
+                ui.printBadEventFormat();
             }
         }
     }
 
-    public static void catchDeleteCommand(String[] parts, TaskManager manager) {
+    public static void catchDeleteCommand(String[] parts, TaskList manager, Ui ui) {
         try {
             int index = Integer.parseInt(parts[1]) - 1;
             manager.deleteTask(index);
         } catch (ArrayIndexOutOfBoundsException e) {
-            Messages.printEmptyMessage("delete");
+            ui.printEmptyMessage("delete");
         } catch (NumberFormatException e) {
-            Messages.printNotANumber("delete");
+            ui.printNotANumber("delete");
         } catch (IndexOutOfBoundsException e) {
-            Messages.printOutOfRange("delete");
+            ui.printOutOfRange("delete");
         }
     }
 }
