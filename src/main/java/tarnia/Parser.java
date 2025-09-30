@@ -19,7 +19,7 @@ public class Parser {
         return new Deadline(description, by);
     }
 
-    public static Events parseEvents(String input) {
+    public static Event parseEvents(String input) {
         if (input == null || input.trim().isEmpty()) {
             throw new IllegalArgumentException("empty");
         } else if (!input.contains("/from") && !input.contains("/to")) {
@@ -30,7 +30,7 @@ public class Parser {
         String description = parts[0].trim();
         String from = parts[1].trim();
         String to = parts[2].trim();
-        return new Events(description, from, to);
+        return new Event(description, from, to);
     }
     
     public static Task parseSavedTask(String line) {
@@ -48,7 +48,7 @@ public class Parser {
             task = new Deadline(description, parts[3]);
             break;
         case "E":
-            task = new Events(description, parts[3], parts[4]);
+            task = new Event(description, parts[3], parts[4]);
             break;
         default:
             throw new IllegalArgumentException("Unknown task type: " + type);
