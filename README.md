@@ -1,10 +1,10 @@
-# Tarnia User Guide
+# Tarnia User Guide 😊
 
 Tarnia is a simple command-line task manager that helps you keep track of tasks such as **todos**, **deadlines**, and **events**.
 
 ---
 
-## Running the Program
+## Running the Program 😈
 1. Ensure you have **Java 17** installed.  
    You can check with:  
    `java -version`  
@@ -14,7 +14,7 @@ Tarnia is a simple command-line task manager that helps you keep track of tasks 
 
 ---
 
-## Features
+## Features 😎
 
 - **Todo** – add a basic task with just a description.  
 - **Deadline** – add a task with a description and a due date.  
@@ -27,7 +27,7 @@ Tarnia is a simple command-line task manager that helps you keep track of tasks 
 
 ---
 
-## Commands
+## Commands 🤪
 
 **Add a Todo**  
 `todo <description>`  
@@ -59,5 +59,9 @@ Example: `event project meeting /from 2pm /to 4pm`
 **Exit**  
 `bye`  
 
+## Notes 🥳
+Commands are case-insensitive.
+Tasks are saved to a local file and reloaded when you run the program again.
+Date/time is saved as strings, so a bit more flexibility in terms of format.
 
-## Exa
+
