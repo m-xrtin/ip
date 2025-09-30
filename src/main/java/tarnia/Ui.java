@@ -66,4 +66,15 @@ public class Ui {
         System.out.println("Now you have " + count + " task(s) in da list :o");
     }
 
+    public void printFoundTasks(ArrayList<Task> results) {
+        System.out.println("Here are the tasks you searched for in the list!");
+        for (int i = 0; i < results.size(); i++) {
+            System.out.println((i + 1) + ". " + results.get(i));
+        }
+    }
+    
+    public void printFoundNoTasks() {
+        System.out.println("Sorryy, didn't manage to find any tasks you searched for:(");
+    }
+
 }

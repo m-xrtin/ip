@@ -33,6 +33,20 @@ public class TaskList {
         saveTasks();
     }
 
+    public void findTask(String keyword) {
+        ArrayList<Task> results = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.getDescription().toLowerCase().contains(keyword.toLowerCase())) {
+                results.add(task);
+            }
+        }
+        if (results.isEmpty()) {
+            ui.printFoundNoTasks();
+        } else {
+            ui.printFoundTasks(results);
+        }
+    }
+
     public void markTask(int index) {
         tasks.get(index).markDone();
         ui.printMarkTaskMessage(tasks.get(index));

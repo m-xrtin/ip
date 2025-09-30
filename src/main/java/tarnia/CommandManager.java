@@ -33,6 +33,9 @@ public class CommandManager {
         case "todo":
             ErrorCatcher.catchTodoCommand(parts, manager, ui);
             break;
+        case "find":
+            ErrorCatcher.catchFindCommand(parts, manager, ui);
+            break;
         case "delete":
             ErrorCatcher.catchDeleteCommand(parts, manager, ui);
             break;

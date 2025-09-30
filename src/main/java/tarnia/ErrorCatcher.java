@@ -63,4 +63,12 @@ public class ErrorCatcher {
             ui.printOutOfRange("delete");
         }
     }
+    
+    public static void catchFindCommand(String[] parts, TaskList manager, Ui ui) {
+        try {
+            manager.findTask(parts[1]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            ui.printEmptyMessage("find");
+        }
+    }
 }
