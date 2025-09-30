@@ -8,8 +8,9 @@ Tarnia is a simple command-line task manager that helps you keep track of tasks 
 1. Ensure you have **Java 17** installed.  
    You can check with:  
    `java -version`  
-
-2. In any directory containing our jar, run:  
+2. Download our program through here:
+   https://github.com/m-xrtin/ip/releases/tag/v1.0
+3. In the directory containing our jar, run:  
    `java -jar tarnia.jar`  
 
 ---
