@@ -60,8 +60,8 @@ Example: `event project meeting /from 2pm /to 4pm`
 `bye`  
 
 ## Notes 🥳
-Commands are case-insensitive.
-Tasks are saved to a local file and reloaded when you run the program again.
-Date/time is saved as strings, so a bit more flexibility in terms of format.
+- Commands are case-insensitive.
+- Tasks are saved to a local file and reloaded when you run the program again.
+- Date/time is saved as strings, so a bit more flexibility in terms of format.
 
 
